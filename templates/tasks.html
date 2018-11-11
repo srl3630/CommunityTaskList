@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Tasks</h1>
+	<a class="btn btn-success" href="/add_task">Add a Task</a>
+	<hr>
+	<ul class="list-group">
+	{% for task in tasks %}
+		<li class="list-group-item"><a href="task/{{task.id}}">{{task.taskname}}</a>
+		{% if not task.claimer %}
+		<td>
+		<a href="claim_task/{{task.id}}" class="btn btn-success pullright">Claim Task</a>
+		</td></li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+{% endblock %}

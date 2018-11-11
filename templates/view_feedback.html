@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Feedback</h1>
+	<ul class="list-group">
+	{% for task in tasks %}
+		<li class="list-group-item"><a href="view_feedback/{{task.id}}">{{task.title}}</a>
+	{% endfor %}
+	</ul>
+{% endblock %}

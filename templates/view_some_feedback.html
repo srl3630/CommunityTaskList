@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>{{task.taskname}}</h1>
+	<small>Posted by {{task.author}}</small>
+	<hr>
+	<div>
+		{{task.body}}
+	</div>
+{% endblock %}

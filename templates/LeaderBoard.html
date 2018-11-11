@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>LeaderBoard</h1>
+	<hr>
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>User</th>
+			<th>Tasks Completed</th>
+
+		</tr>
+		{% for user in users %}
+			<tr>
+				<td>{{user.name}}
+					{% if user.username == username %}
+						<b>(You)</b>
+					{% endif %}
+				</td>
+				<td>{{user.username}}</td>	
+				<td>{{user.score}}</td>			
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

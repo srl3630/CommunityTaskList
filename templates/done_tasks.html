@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>
+	Welcome To The Archive, {{session.username}}</h1>
+	<hr>
+	<h2>Completed Tasks</h2>
+	<table class="table table-striped">
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Date</th>
+			<th>Done by</th>
+			<th>Approver</th>
+		</tr>
+		{% for task in mytasks %}
+			<tr>
+				<td>{{task.id}}</td>
+				<td>{{task.taskname}}</td>
+				<td>{{task.author}}</td>
+				<td>{{task.create_date}}</td>
+				<td>{{task.claimer}}</td>
+				<td>{{task.approved}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}
